@@ -29,7 +29,6 @@ public class CountingSort {
         }
 
         System.out.println(Arrays.toString(output));
-//        System.arraycopy(output, 0, a, 0, a.length);
     }
 
     public static void main(String[] args) {
@@ -40,7 +39,6 @@ public class CountingSort {
         	a[i] = sc.nextInt();
         }
         countingSort(a);
-//        System.out.println(Arrays.toString(a)); 
         sc.close();
     }
 }
