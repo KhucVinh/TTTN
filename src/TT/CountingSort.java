@@ -6,15 +6,13 @@ import java.util.Scanner;
 public class CountingSort {
 	public static void countingSort(int[] a) {
         int max = Arrays.stream(a).max().getAsInt();
-        int min = Arrays.stream(a).min().getAsInt();
-        int range = max - min + 1;
 
-        int[] count = new int[range];
+        int[] count = new int[max+1];
         int[] output = new int[a.length];
 
         
         for (int num : a) {
-            count[num - min]++;
+            count[num]++;
         }
 
         
@@ -24,8 +22,8 @@ public class CountingSort {
 
         
         for (int i = a.length - 1; i >= 0; i--) {
-            output[count[a[i] - min] - 1] = a[i];
-            count[a[i] - min]--;
+            output[count[a[i]] - 1] = a[i];
+            count[a[i]]--;
         }
 
         System.out.println(Arrays.toString(output));
